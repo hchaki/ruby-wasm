@@ -4,14 +4,37 @@
     <meta charset="UTF-8" />
     <title>Ruby.wasmのテスト</title>
     <script src="https://cdn.jsdelivr.net/npm/@ruby/3.3-wasm-wasi@2.4.1/dist/browser.script.iife.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Ruby.wasm を動かしてみよう</h1>
-    <div
-      id="output"
-      style="font-size: 20px; color: text-shadow: 1px 1px 2px #ccc;"
-    ></div>
+    <h1>Ruby オブジェクト視覚化デバッガー</h1>
+    <p>
+      Rubyのコードを入力して実行すると、**最後の行の評価結果（オブジェクト）**の構造を解析します。
+    </p>
 
+    <label for="example_select">例文を選ぶ:</label>
+    <select id="example_select">
+      <option value="string">文字列 (String)</option>
+      <option value="array">配列 (Array)</option>
+      <option value="hash">ハッシュ (Hash)</option>
+      <option value="range">範囲 (Range)</option>
+      <option value="symbol">シンボル (Symbol)</option>
+      <option value="regexp">正規表現 (Regexp)</option>
+      <option value="struct">Struct</option>
+      <option value="proc">Proc / Lambda</option>
+      <option value="custom">自作クラス (Human)</option>
+    </select>
+    <br />
+
+    <textarea id="ruby_code">"こんにちは、世界！"</textarea><br />
+
+    <button id="analyze_btn" onclick="window.analyzeRubyObject()" disabled>
+      Rubyの起動を待っています...
+    </button>
+    <h3>解析結果:</h3>
+    <div id="result_output">ここに結果が表示されます</div>
+
+    <script src="examples.js"></script>
     <script type="text/ruby" src="main.rb"></script>
   </body>
 </html>
