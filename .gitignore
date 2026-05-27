@@ -1,0 +1,45 @@
+# Ruby
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+.ruby-version
+.rspec_status
+
+# Ruby LSP
+.ruby-lsp/
+
+# WASM build artifacts
+*.wasm
+tmp/
+build/
+dist/
+
+# Node (in case of tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Claude Code local settings
+.claude/settings.local.json
